@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性面板</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <button onclick="showPage('profile-card')">属性</button>
+        <button onclick="showPage('skills')">技能树</button>
+        <button onclick="showPage('tasks')">任务</button>
+    </div>
+
+    <!-- 属性界面 -->
+    <div id="profile-card" class="page active">
+        <h1>属性界面</h1>
+        <!-- 添加背景容器 -->
+        <div id="background-container">
+            <!-- 右上角：六边形 -->
+            <div class="hexagon-container" onclick="openAdjustDialog()">
+                <canvas id="hexagon" width="150" height="150"></canvas>
+            </div>
+            <!-- 左下角：属性详细信息 -->
+            <div class="attribute-info">
+                <p>体育: <span id="sports-val">50</span></p>
+                <p>艺术: <span id="art-val">50</span></p>
+                <p>数学: <span id="math-val">50</span></p>
+                <p>编程: <span id="coding-val">50</span></p>
+                <p>社交: <span id="social-val">50</span></p>
+                <p>语言学: <span id="linguistics-val">50</span></p>
+            </div>
+            <!-- 右下角：特质信息 -->
+            <div class="traits-info">
+                <p>完美主义: 我会努力把事情做到最好</p>
+                <p>急性子: 我会迅速行动</p>
+                <p>倾听者: 我是个好听众</p>
+            </div>
+        </div>
+    
+        <!-- 属性调节对话框 -->
+        <div id="adjust-dialog" class="dialog hidden">
+            <h3>调整属性</h3>
+            <label>体育: <input type="range" id="sports" min="0" max="100" value="50"></label><br>
+            <label>艺术: <input type="range" id="art" min="0" max="100" value="50"></label><br>
+            <label>数学: <input type="range" id="math" min="0" max="100" value="50"></label><br>
+            <label>编程: <input type="range" id="coding" min="0" max="100" value="50"></label><br>
+            <label>社交: <input type="range" id="social" min="0" max="100" value="50"></label><br>
+            <label>语言学: <input type="range" id="linguistics" min="0" max="100" value="50"></label><br>
+            <button onclick="applyAdjustments()">确认</button>
+            <button onclick="closeAdjustDialog()">取消</button>
+        </div>
+    </div>
+
+    <!-- 技能树界面 -->
+    <div id="skills" class="page">
+        <h1>技能树界面</h1>
+        <div class="content">
+            <!-- 这里可以放技能树 -->
+        </div>
+    </div>
+
+    <!-- 任务界面 -->
+    <div id="tasks" class="page">
+        <h1>任务界面</h1>
+        <div class="content">
+            <!-- 这里可以放任务内容 -->
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

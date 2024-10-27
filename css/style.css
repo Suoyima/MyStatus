@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.navbar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.page {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page.active {
+    display: block;
+}
+.hexagon-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.attribute-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: left;
+}
+
+.traits-info {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    text-align: right;
+}
+
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.dialog.hidden {
+    display: none;
+}
+
+.dialog.show {
+    display: block;
+}
+/* 背景容器，模拟手机竖屏大小 */
+#background-container {
+    width: 360px; /* 竖屏手机的典型宽度 */
+    height: 640px; /* 竖屏手机的典型高度 */
+    background-color: #f0f0f0; /* 背景颜色 */
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 调整六边形容器位置 */
+.hexagon-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* 调整左下角属性信息 */
+.attribute-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: left;
+}
+
+/* 调整右下角特质信息 */
+.traits-info {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    text-align: right;
+}
+
+/* 调节对话框样式 */
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.dialog.hidden {
+    display: none;
+}
+
+.dialog.show {
+    display: block;
+}
