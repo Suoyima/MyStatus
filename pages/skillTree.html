@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>技能树</title>
+    <style>
+        /* 基础样式，适配手机端 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* 容器样式 */
+        .skill-tree-container {
+            width: 100%;
+            max-width: 350px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        /* 技能卡片样式 */
+        .skill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .skill:hover {
+            background-color: #0056b3;
+        }
+
+        /* 技能描述弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .close-btn, .upgrade-btn {
+            margin-top: 10px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .close-btn {
+            background-color: #ccc;
+        }
+
+        .upgrade-btn {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* 底部菜单栏样式 */
+        .bottom-menu {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 350px;
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffffff;
+            padding: 10px 0;
+            box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+            border-top: 1px solid #ddd;
+        }
+        .menu-btn {
+            font-size: 16px;
+            color: #007bff;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 技能树容器 -->
+    <div class="skill-tree-container">
+        <h2>技能树</h2>
+        <div class="skill" onclick="showSkillDetails('技能 1', '描述：这是技能1的详细说明。')">技能 1</div>
+        <div class="skill" onclick="showSkillDetails('技能 2', '描述：这是技能2的详细说明。')">技能 2</div>
+        <div class="skill" onclick="showSkillDetails('技能 3', '描述：这是技能3的详细说明。')">技能 3</div>
+        <div class="skill" onclick="showSkillDetails('技能 4', '描述：这是技能4的详细说明。')">技能 4</div>
+        <div class="skill" onclick="showSkillDetails('技能 5', '描述：这是技能5的详细说明。')">技能 5</div>
+    </div>
+
+    <!-- 弹出框（模态框） -->
+    <div class="modal" id="skillModal">
+        <div class="modal-content">
+            <h3 id="skillTitle">技能标题</h3>
+            <p id="skillDescription">技能描述</p>
+            <button class="upgrade-btn" onclick="upgradeSkill()">升级技能</button>
+            <button class="close-btn" onclick="closeModal()">关闭</button>
+        </div>
+    </div>
+
+    <!-- 底部菜单栏 -->
+    <div class="bottom-menu">
+        <button class="menu-btn" onclick="navigateTo('index')">主界面</button>
+        <button class="menu-btn" onclick="navigateTo('skillTree')">技能树</button>
+        <button class="menu-btn" onclick="navigateTo('task')">任务栏</button>
+    </div>
+
+    <script>
+        // 显示技能详情弹出框
+        function showSkillDetails(title, description) {
+            document.getElementById('skillTitle').innerText = title;
+            document.getElementById('skillDescription').innerText = description;
+            document.getElementById('skillModal').style.display = 'flex';
+        }
+
+        // 升级技能的逻辑
+        function upgradeSkill() {
+            alert('技能已升级！');
+            closeModal();
+        }
+
+        // 关闭模态框
+        function closeModal() {
+            document.getElementById('skillModal').style.display = 'none';
+        }
+
+        // 导航函数
+        function navigateTo(page) {
+            const pageMap = {
+                'index': '../index.html',
+                'skillTree': 'skillTree.html',
+                'task': 'task.html'
+            };
+            window.location.href = pageMap[page];
+        }
+    </script>
+
+</body>
+</html>

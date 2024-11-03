@@ -1,0 +1,28 @@
+{
+  "id": "__UNI__F136098",
+  "name": "test03",
+  "description": "哈哈哈哈",
+  "version": {
+    "name": "1.0.0",
+    "code": "100"
+  },
+  "uni-app-x": {
+    "compilerVersion": "4.29"
+  },
+  "app": {
+    "distribute": {
+      "icons": {
+        "android": {
+          "hdpi": "",
+          "xhdpi": "",
+          "xxhdpi": "",
+          "xxxhdpi": ""
+        }
+      },
+      "modules": {
+        "uni-exit": {},
+        "uni-prompt": {}
+      }
+    }
+  }
+}
